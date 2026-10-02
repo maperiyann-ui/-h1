@@ -1,0 +1,182 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	padding: 40px 20px;
+	color: #1c2c27;
+	background-color: #e8f0eb;
+	background-image: radial-gradient(#b8cfc0 0.8px, transparent 0.8px);
+	background-size: 18px 18px;
+	font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+}
+
+[hidden] {
+	display: none !important;
+}
+
+.page-shell {
+	width: min(100%, 760px);
+	margin: 0 auto;
+}
+
+.panel {
+	padding: clamp(24px, 6vw, 48px);
+	border: 1px solid #c8d8cd;
+	border-top: 5px solid #d3573f;
+	background: #fbfdfb;
+	box-shadow: 0 18px 50px rgb(31 61 46 / 10%);
+}
+
+.eyebrow {
+	margin: 0 0 12px;
+	color: #317356;
+	font-size: 0.78rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+}
+
+h1,
+h2,
+h3,
+p {
+	margin-top: 0;
+}
+
+h1 {
+	margin-bottom: 12px;
+	font-family: Georgia, "Yu Mincho", serif;
+	font-size: clamp(1.8rem, 6vw, 2.5rem);
+	line-height: 1.2;
+}
+
+.intro {
+	margin-bottom: 28px;
+	color: #52645a;
+	line-height: 1.8;
+}
+
+.terms {
+	padding-top: 22px;
+	border-top: 1px solid #dce6df;
+}
+
+.terms h2 {
+	margin-bottom: 12px;
+	font-size: 1.1rem;
+}
+
+.terms-copy {
+	max-height: 260px;
+	overflow-y: auto;
+	padding: 4px 16px 4px 0;
+	color: #405148;
+	line-height: 1.75;
+	scrollbar-color: #84a993 #e8f0eb;
+}
+
+.terms-copy h3 {
+	margin: 16px 0 6px;
+	color: #1c2c27;
+	font-size: 0.95rem;
+}
+
+.terms-copy p {
+	margin-bottom: 12px;
+}
+
+.consent {
+	display: flex;
+	gap: 10px;
+	align-items: flex-start;
+	margin: 18px 0 22px;
+	line-height: 1.55;
+	cursor: pointer;
+}
+
+.consent input {
+	width: 18px;
+	height: 18px;
+	flex: 0 0 auto;
+	margin: 2px 0 0;
+	accent-color: #317356;
+}
+
+button,
+.tools a {
+	display: inline-flex;
+	min-height: 48px;
+	align-items: center;
+	justify-content: center;
+	padding: 12px 18px;
+	border: 0;
+	background: #317356;
+	color: #fff;
+	font: inherit;
+	font-weight: 700;
+	text-align: center;
+	text-decoration: none;
+}
+
+button {
+	cursor: pointer;
+}
+
+button:hover:not(:disabled),
+.tools a:hover {
+	background: #24583f;
+}
+
+button:disabled {
+	background: #a7b8ad;
+	cursor: not-allowed;
+}
+
+button:focus-visible,
+.tools a:focus-visible,
+.consent input:focus-visible {
+	outline: 3px solid #d3573f;
+	outline-offset: 3px;
+}
+
+.status {
+	min-height: 1.5em;
+	margin: 14px 0 0;
+	color: #52645a;
+	line-height: 1.6;
+}
+
+.tools {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+}
+
+@media (max-width: 520px) {
+	body {
+		padding: 16px 12px;
+	}
+
+	.panel {
+		padding: 24px 20px;
+	}
+
+	.tools a {
+		width: 100%;
+	}
+}
+
+/* ▼ 今回追加したロゴ配置用のスタイル ▼ */
+.site-header {
+	margin-bottom: 24px;
+	display: flex;
+	align-items: center;
+}
+
+.header-logo {
+	width: 220px;
+	height: auto;
+}
+/* ▲ 追加ここまで ▲ */

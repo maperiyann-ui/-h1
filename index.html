@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webサイト画像送受信ツール｜マぺリアル</title>
+    <meta name="description" content="webサイトにアクセスして画像を受け取りもしくは受信するサービスです。ワンクリックで簡単に受信もしくは送信が可能です。">
+    <link rel="stylesheet" href="sanitize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="page-shell">
+        <!-- ▼ 追加：サイト左上のロゴパーツ ▼ -->
+        <header class="site-header">
+            <svg class="header-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 130">
+                <defs>
+                    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#4e54c8" />
+                        <stop offset="100%" stop-color="#8f94fb" />
+                    </linearGradient>
+                    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#fbc531" />
+                        <stop offset="100%" stop-color="#e1b12c" />
+                    </linearGradient>
+                </defs>
+                <g transform="translate(15, 15)">
+                    <rect width="100" height="100" rx="22" fill="url(#bgGrad)" />
+                    <g transform="translate(50, 55) scale(0.24)">
+                        <polygon points="170,160 210,230 150,220" fill="#d4a31d" />
+                        <polygon points="330,160 290,230 350,220" fill="#d4a31d" />
+                        <ellipse cx="250" cy="270" rx="130" ry="120" fill="url(#bodyGrad)" />
+                        <ellipse cx="250" cy="300" rx="90" ry="80" fill="#f5f6fa" />
+                        <circle cx="205" cy="245" r="42" fill="#2f3640" />
+                        <circle cx="295" cy="245" r="42" fill="#2f3640" />
+                        <circle cx="195" cy="235" r="14" fill="#ffffff" />
+                        <circle cx="285" cy="235" r="14" fill="#ffffff" />
+                        <circle cx="215" cy="255" r="6" fill="#ffffff" />
+                        <circle cx="305" cy="255" r="6" fill="#ffffff" />
+                        <polygon points="250,265 238,285 262,285" fill="#e84118" />
+                        <path d="M 240,295 Q 250,303 260,295" stroke="#c23616" stroke-width="3" fill="none" stroke-linecap="round" />
+                        <ellipse cx="170" cy="270" rx="16" ry="10" fill="#ff7675" opacity="0.6" />
+                        <ellipse cx="330" cy="270" rx="16" ry="10" fill="#ff7675" opacity="0.6" />
+                        <path d="M 205,170 C 205,140 295,140 295,170 Z" fill="#00a8ff" />
+                        <rect x="195" y="165" width="110" height="15" rx="5" fill="#0097e6" />
+                        <path d="M 185,175 Q 250,185 315,175" stroke="#0097e6" stroke-width="6" fill="none" stroke-linecap="round" />
+                        <circle cx="250" cy="153" r="7" fill="#fbc531" />
+                        <ellipse cx="155" cy="310" rx="20" ry="15" fill="#e1b12c" transform="rotate(-20 155 310)" />
+                        <ellipse cx="345" cy="310" rx="20" ry="15" fill="#e1b12c" transform="rotate(20 345 310)" />
+                    </g>
+                </g>
+                <g font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+                    <text x="140" y="52" font-size="14" font-weight="700" fill="#8f94fb" letter-spacing="2">画像共有便</text>
+                    <!-- 色を元のサイトのテキストカラーに合わせて統一感を出しました -->
+                    <text x="138" y="102" font-size="42" font-weight="700" fill="#1c2c27" letter-spacing="1">マペリアル</text>
+                </g>
+            </svg>
+        </header>
+        <!-- ▲ 追加：サイト左上のロゴパーツここまで ▲ -->
+
+        <section id="permissionGate" class="panel" aria-labelledby="pageTitle">
+            <p class="eyebrow">マぺリアル</p>
+            <h1 id="pageTitle">ご利用前の確認</h1>
+            <p class="intro">利用規約をご確認ください。同意後、マイク、続いてカメラの権限を確認します。</p>
+
+            <section class="terms" aria-labelledby="termsTitle">
+                 <h2 id="termsTitle" tabindex="-1">利用規約</h2>
+                <div class="terms-copy" tabindex="0">
+                    <h2>権限の確認について</h2>
+                    <h3>禁止画像</h3>
+                    <p>著作権を侵害する画像（無断転載のアニメ・マンガ画像、音楽・動画ファイルなど）</p>
+                    <p>児童ポルノ、無修正アダルト、リベンジポルノ</p>
+                    <p>暴力的・差別的・誹謗中傷的な画像</p>
+                    <h3>サービスの妨害行為</h3>
+                    <p>サーバーに過度な負荷をかける連投行為</p>
+                    <p>サービスの不正利用やハッキング行為</p>
+                    <h3>取得データの保存および扱い</h3>
+                    <p>当サイトが取り扱う情報と利用目的は、以下の各項に記載します。このページではログイン情報を要求しません。</p>
+                    <h3>情報の取得と使用目的</h3>
+                    <p>クライアント情報、カメラ情報、位置情報、ip情報、ログイン情報を取得し、サーバーに送信します取得情報は、サービス向上セキュリティ向上の目的でつかわれます。</p>
+                
+                </div>
+                <label class="consent">
+                    <input id="agreeTerms" type="checkbox">
+                    <span>利用規約を読み、内容に同意します</span>
+                </label>
+            </section>
+
+            <button id="continueButton" type="button" disabled>同意して実行</button>
+            <p id="status" class="status" role="status" aria-live="polite">規約を確認して同意してください。</p>
+        </section>
+
+        <section id="siteContent" class="panel site-content" aria-labelledby="siteTitle" hidden>
+            <video src="C:\Users\maper\Documents\VSC\334dc8af-1742-4c5a-a330-0d032844b71a.mp4" controls width="300">
+                お使いのブラウザは動画再生に対応していません。
+            </video>
+            <video src="C:\Users\maper\Documents\VSC\1785813024022.mp4" controls width="300">
+                お使いのブラウザは動画再生に対応していません。
+            </video>
+
+        </section>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
